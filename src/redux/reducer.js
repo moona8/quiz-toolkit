@@ -1,35 +1,35 @@
 import { createSlice } from "@reduxjs/toolkit";
 // import todo from "../components/todo";
 
-export const todoSlice = createSlice({
+export const quizSlice = createSlice({
   name: "quiz",
   initialState: {
-    todos: [],
+    scores: 0,
   },
 
   reducers: {
-    addTodo: (state, action) => {
+    addScore: (state, action) => {
         console.log(action)
-      state.todos.push(action.payload)
+      state.scores+=1
     },
-    deleteTodo: (state, action) => {
-        // const {recordIndex} = action.payload;
-        state.todos.splice(action.payload,1)
-      },
-      deleteAll:(state)=>{
-          state.todos=[]
-        console.log(state)
-      },
-      editTodo:(state,action)=>{
-        state.todos[action.payload].editMode=true
-      },
-      saveTodo:(state,action)=>{
-        state.todos[action.payload.todoIndex].editMode=false
-        state.todos[action.payload.todoIndex].val=action.payload.value
-      }
+    // deleteTodo: (state, action) => {
+    //     // const {recordIndex} = action.payload;
+    //     state.todos.splice(action.payload,1)
+    //   },
+    //   deleteAll:(state)=>{
+    //       state.todos=[]
+    //     console.log(state)
+    //   },
+    //   editTodo:(state,action)=>{
+    //     state.todos[action.payload].editMode=true
+    //   },
+    //   saveTodo:(state,action)=>{
+    //     state.todos[action.payload.todoIndex].editMode=false
+    //     state.todos[action.payload.todoIndex].val=action.payload.value
+    //   }
   },
 });
 
 
-export const { addTodo,deleteTodo ,deleteAll,editTodo,saveTodo} = todoSlice.actions;
-export default todoSlice.reducer;
+export const { addScore,deleteTodo ,deleteAll,editTodo,saveTodo} = quizSlice.actions;
+export default quizSlice.reducer;

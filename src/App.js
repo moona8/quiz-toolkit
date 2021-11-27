@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import {addScore} from './redux/reducer'
 
 export default function App() {
 	const questions = [
@@ -39,14 +41,18 @@ export default function App() {
 			],
 		},
 	];
+  const scores = useSelector((state) => state.quiz.scores);
+  const dispatch = useDispatch();
 
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
-	const [score, setScore] = useState(0);
+	// const [score, setScore] = useState(0);
 
 	const handleAnswerOptionClick = (isCorrect) => {
 		if (isCorrect) {
-			setScore(score + 1);
+      // setScore(score + 1);
+      dispatch(
+        addScore()) 
 		}
 
 		const nextQuestion = currentQuestion + 1;
@@ -60,7 +66,7 @@ export default function App() {
 		<div className='app'>
 			{showScore ? (
 				<div className='score-section'>
-					You scored {score} out of {questions.length}
+					You scored {scores} out of {questions.length}
 				</div>
 			) : (
 				<>

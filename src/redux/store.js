@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import todoReducer from "../redux/reducer";
+import quizReducer from "../redux/reducer";
 
 export default configureStore({
   reducer: {
-    todo: todoReducer,
+    quiz: quizReducer,
   },
 });
