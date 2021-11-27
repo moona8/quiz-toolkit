@@ -12,7 +12,7 @@ body {
 }
 
 body {
-  background-color: #7cc6fe;
+  background-color: #7c94fe;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,7 @@ body {
 }
 
 .app {
-  background-color: #252d4a;
+  background-color: #41396e;
   width: 450px;
   min-height: 200px;
   height: min-content;
@@ -77,13 +77,13 @@ button {
   width: 100%;
   font-size: 16px;
   color: #ffffff;
-  background-color: #252d4a;
+  background-color: #2f254a;
   border-radius: 15px;
   display: flex;
   padding: 5px;
   justify-content: flex-start;
   align-items: center;
-  border: 5px solid #234668;
+  border: 5px solid #9bbee0;
   cursor: pointer;
 }
 
